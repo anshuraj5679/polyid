@@ -1,0 +1,29 @@
+[
+  {
+    "email": "admin@test.edu",
+    "passwordHash": "$2a$10$dFxUxVHRUifiUBUK5F5SpOJawIfvmjMdCv7Y.82WAhmXfeijJp4ti",
+    "_id": "mock-admin-id",
+    "name": "Test University",
+    "walletAddress": "0x8aDEc9885b3A4E5824f329fCCC3026BaFdce6B8F",
+    "verified": true,
+    "createdAt": "2025-11-21T06:34:10.940Z"
+  },
+  {
+    "_id": "in-memory-1763707202211",
+    "name": "iit delhi",
+    "email": "iitdelhi@123.edu",
+    "passwordHash": "$2a$10$HvQjg87vAW1eDxNmXlTjXe4qwrgn6/AWw6nIF5X/zu6lsPSanKSEi",
+    "walletAddress": "0x742d35Cc6634C0532925a3b844Bc9e7595f0bEb1",
+    "verified": true,
+    "createdAt": "2025-11-21T06:40:02.211Z"
+  },
+  {
+    "_id": "in-memory-1763708739828",
+    "name": "iit kanpur",
+    "email": "iitkanpur@123.edu",
+    "passwordHash": "$2a$10$QgbftSA8bb4VeM8.3wl5IuAmdxoxRo/ZqR1w7S3ZVafk5ybbaQL8W",
+    "walletAddress": "0x742d35Cc6634C0532925a3b844Bc9e7595f0bEb1",
+    "verified": true,
+    "createdAt": "2025-11-21T07:05:39.828Z"
+  }
+]

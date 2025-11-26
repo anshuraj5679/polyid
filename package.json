@@ -1,0 +1,24 @@
+{
+	"name": "polyid-hardhat",
+	"private": true,
+	"version": "1.0.0",
+	"license": "MIT",
+	"scripts": {
+		"compile": "hardhat compile",
+		"deploy:amoy": "hardhat run scripts/deploy.js --network amoyTestnet",
+		"test": "hardhat test",
+		"setup": "node setup.js",
+		"dev": "node start.js",
+		"dev:backend": "cd backend && npm run dev",
+		"dev:frontend": "cd frontend && npm run dev"
+	},
+	"devDependencies": {
+		"@nomicfoundation/hardhat-toolbox": "^5.0.0",
+		"dotenv": "^16.4.5",
+		"hardhat": "^2.22.10",
+		"concurrently": "^9.0.1"
+	},
+	"dependencies": {
+		"@openzeppelin/contracts": "^5.0.2"
+	}
+}

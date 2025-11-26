@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>PolyID</title>
+	</head>
+	<body>
+		<!-- Animated background -->
+		<div class="fixed inset-0 -z-10 bg-gradient-to-br from-[#1e1b4b] via-[#0f172a] to-[#0b1020] animate-[bgMove_18s_ease_infinite]"></div>
+
+		<!-- Top loading bar -->
+		<div id="topbar" class="fixed left-0 top-0 h-0.5 w-0 bg-gradient-to-r from-[#7c3aed] via-[#06b6d4] to-[#22c55e] z-50 transition-all duration-200"></div>
+
+		<div id="root"></div>
+
+		<!-- Toast container -->
+		<div id="toast" class="fixed top-4 right-4 z-50 hidden rounded-lg text-white px-4 py-2 shadow-lg"></div>
+
+		<style>
+			@keyframes bgMove { 0%{ filter: hue-rotate(0deg) } 50%{ filter: hue-rotate(30deg) } 100%{ filter: hue-rotate(0deg) } }
+			/* Reveal animation */
+			.reveal-pre { opacity: 0; transform: translateY(6px); }
+			.reveal-in { opacity: 1; transform: translateY(0); transition: opacity .5s ease, transform .5s ease; }
+			/* Text selection */
+			::selection { background: rgba(124, 58, 237, 0.35); color: #fff; }
+		</style>
+		<script>
+			// Topbar tiny helper
+			(function(){
+				const el = document.getElementById('topbar');
+				let n=0, timer;
+				function start(){
+					clearInterval(timer);
+					el.style.width = '0%';
+					el.style.opacity = '1';
+					n = 0;
+					timer = setInterval(()=>{
+						n = Math.min(95, n + Math.random()*10 + 5);
+						el.style.width = n + '%';
+					}, 200);
+				}
+				function done(){
+					clearInterval(timer);
+					el.style.width = '100%';
+					setTimeout(()=>{ el.style.opacity = '0'; el.style.width = '0%'; }, 250);
+				}
+				window.topbarStart = start; window.topbarDone = done;
+			})();
+
+			// Ripple effect for elements with .btn-ripple
+			(function(){
+				document.addEventListener('click', function(e){
+					const t = e.target.closest('.btn-ripple');
+					if(!t) return;
+					const circle = document.createElement('span');
+					const d = Math.max(t.clientWidth, t.clientHeight);
+					const r = d/2;
+					circle.style.width = circle.style.height = d + 'px';
+					circle.style.left = (e.clientX - t.getBoundingClientRect().left - r) + 'px';
+					circle.style.top = (e.clientY - t.getBoundingClientRect().top - r) + 'px';
+					circle.style.position='absolute'; circle.style.borderRadius='50%'; circle.style.background='rgba(255,255,255,0.2)'; circle.style.transform='scale(0)'; circle.style.animation='ripple .6s ease-out';
+					circle.className='pointer-events-none';
+					t.style.position = t.style.position || 'relative';
+					t.appendChild(circle);
+					circle.addEventListener('animationend', ()=> circle.remove());
+				});
+				const style = document.createElement('style');
+				style.textContent = '@keyframes ripple{ to { transform: scale(2.5); opacity: 0; } }';
+				document.head.appendChild(style);
+			})();
+
+			// Scroll reveal for elements with [data-reveal]
+			(function(){
+				const io = new IntersectionObserver((entries)=>{
+					entries.forEach(en=>{
+						if(en.isIntersecting){ en.target.classList.remove('reveal-pre'); en.target.classList.add('reveal-in'); io.unobserve(en.target); }
+					});
+				},{ threshold: 0.05 });
+				window.addEventListener('DOMContentLoaded', ()=>{
+					document.querySelectorAll('[data-reveal]').forEach(el=>{ el.classList.add('reveal-pre'); io.observe(el); });
+				});
+			})();
+
+			window.toast = function(msg, type){
+				try {
+					const el = document.getElementById('toast');
+					el.textContent = msg || '';
+					el.style.background = type === 'error' ? '#7f1d1d' : '#064e3b';
+					el.classList.remove('hidden');
+					clearTimeout(window.__toastTimer);
+					window.__toastTimer = setTimeout(() => el.classList.add('hidden'), 2200);
+				} catch (_) {}
+			}
+		</script>
+		<script type="module" src="/src/main.jsx"></script>
+	</body>
+</html>
+
+
+
+
+

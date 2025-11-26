@@ -1,0 +1,11 @@
+[
+  {
+    "issuer_id": "in-memory-1763708739828",
+    "updated_at": "2025-11-21T08:26:59.063Z",
+    "status": "active",
+    "plan_id": "polyid-monthly",
+    "plan_name": "PolyID Pro (Test)",
+    "current_period_end": "2025-12-21T08:26:59.063Z",
+    "last_event": "test_activation"
+  }
+]

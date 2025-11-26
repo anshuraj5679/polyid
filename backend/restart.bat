@@ -1,0 +1,6 @@
+@echo off
+echo Killing process on port 4001...
+node kill-port.js
+echo.
+echo Starting backend...
+npm start
