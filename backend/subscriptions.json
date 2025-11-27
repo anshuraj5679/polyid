@@ -7,5 +7,23 @@
     "plan_name": "PolyID Pro (Test)",
     "current_period_end": "2025-12-21T08:26:59.063Z",
     "last_event": "test_activation"
+  },
+  {
+    "issuer_id": "in-memory-1764187558964",
+    "updated_at": "2025-11-26T20:07:02.119Z",
+    "status": "active",
+    "plan_id": "polyid-monthly",
+    "plan_name": "PolyID Pro (Test)",
+    "current_period_end": "2025-12-26T20:07:02.119Z",
+    "last_event": "test_activation"
+  },
+  {
+    "issuer_id": "in-memory-1764227856242",
+    "updated_at": "2025-11-27T07:18:09.662Z",
+    "status": "active",
+    "plan_id": "polyid-monthly",
+    "plan_name": "PolyID Pro (Test)",
+    "current_period_end": "2025-12-27T07:18:09.662Z",
+    "last_event": "test_activation"
   }
 ]

@@ -1,0 +1,17 @@
+🎯 QUICK ACTION: Run This SQL in Supabase
+
+1. Go to: https://supabase.com/dashboard/project/snfvofciggrvjtvfqdcq/editor
+
+2. Click: SQL Editor → New Query
+
+3. Copy the ENTIRE content from: polyid/backend/supabase-schema.sql
+
+4. Paste into SQL Editor
+
+5. Click: Run (or Ctrl+Enter)
+
+6. Done! Check Table Editor to see your 4 new tables.
+
+---
+
+That's it! Your database will be ready. 🚀

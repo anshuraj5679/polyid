@@ -25,5 +25,23 @@
     "walletAddress": "0x742d35Cc6634C0532925a3b844Bc9e7595f0bEb1",
     "verified": true,
     "createdAt": "2025-11-21T07:05:39.828Z"
+  },
+  {
+    "_id": "in-memory-1764187558964",
+    "name": "mit",
+    "email": "mit@123.edu",
+    "passwordHash": "$2a$10$KjCuN000UCCg0Y1zAcX38OBGcG4S9rzaL9pgORfItqhPwVHKRWc.y",
+    "walletAddress": "0x742d35Cc6634C0532925a3b844Bc9e7595f0bEb1",
+    "verified": true,
+    "createdAt": "2025-11-26T20:05:58.964Z"
+  },
+  {
+    "_id": "in-memory-1764227856242",
+    "name": "bmsit",
+    "email": "bmsit@123.edu",
+    "passwordHash": "$2a$10$M0EQ8LcwxlKPZcOZN5eJmeD/qTlugvtaKVHAHOzM303JbngGHAcqS",
+    "walletAddress": "0x742d35Cc6634C0532925a3b844Bc9e7595f0bEb1",
+    "verified": true,
+    "createdAt": "2025-11-27T07:17:36.242Z"
   }
 ]
